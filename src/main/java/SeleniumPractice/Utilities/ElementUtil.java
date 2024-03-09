@@ -40,6 +40,16 @@ public class ElementUtil {
 
     }
 
+    public void doActionsSendKeys(By locator,String value) {
+        Actions act=new Actions(driver);
+        act.sendKeys(getWebElement(locator),value).perform();
+    }
+
+    public void doActionsClick(By locator) {
+        Actions act=new Actions(driver);
+        act.click(getWebElement(locator)).perform();
+    }
+
     public WebElement getWebElement(By locator) {
         return driver.findElement(locator);
     }
