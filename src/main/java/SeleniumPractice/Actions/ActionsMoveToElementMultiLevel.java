@@ -27,9 +27,9 @@ public class ActionsMoveToElementMultiLevel {
         Actions act = new Actions(driver);
         doClick(locator1);
         Thread.sleep(1500);
-        act.moveToElement(getWebElement(locator2)).perform();
+        moveToElement(locator2);
         Thread.sleep(1500);
-        act.moveToElement(getWebElement(locator3)).perform();
+        moveToElement(locator3);
         Thread.sleep(1500);
         doClick(locator4);
 
@@ -41,6 +41,12 @@ public class ActionsMoveToElementMultiLevel {
 
     public static void doClick(By locator) {
         getWebElement(locator).click();
+    }
+
+    public static void moveToElement(By locator) {
+
+        Actions act = new Actions(driver);
+        act.moveToElement(getWebElement(locator)).perform();
     }
 
 }

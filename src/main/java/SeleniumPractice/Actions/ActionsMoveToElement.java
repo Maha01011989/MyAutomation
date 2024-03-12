@@ -34,9 +34,9 @@ public class ActionsMoveToElement {
 
 
     public static void clickSubMenu(By target, By sub) {
-        Actions act = new Actions(driver);
+        //Actions act = new Actions(driver);
         // WebElement menu = getWebElement(target);
-        act.moveToElement(getWebElement(target)).perform();
+        moveToElement(target);
         // WebElement subMenu = getWebElement(sub);
         doClick(sub);
 
@@ -49,6 +49,13 @@ public class ActionsMoveToElement {
 
     public static void doClick(By locator) {
         getWebElement(locator).click();
+    }
+
+
+    public static void moveToElement(By locator) {
+
+        Actions act =new Actions(driver);
+        act.moveToElement(getWebElement(locator)).perform();
     }
 
 

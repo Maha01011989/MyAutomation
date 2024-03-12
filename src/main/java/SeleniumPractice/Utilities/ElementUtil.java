@@ -14,40 +14,55 @@ public class ElementUtil {
     }
 
 
-    public Actions getActionsClassInstance()
-    {
+    public Actions getActionsClassInstance() {
         return new Actions(driver);
+    }
+
+    public void moveToElement(By locator) {
+
+        Actions act = new Actions(driver);
+        act.moveToElement(getWebElement(locator)).perform();
     }
 
 
     public void clickSubMenu(By target, By sub) {
-        Actions act = new Actions(driver);
+       // Actions act = new Actions(driver);
         // WebElement menu = getWebElement(target);
-        act.moveToElement(getWebElement(target)).perform();
+        moveToElement(target);
+       // act.moveToElement(getWebElement(target)).perform();
         // WebElement subMenu = getWebElement(sub);
         doClick(sub);
 
     }
+
     public void clickSubMenu(By locator1, By locator2, By locator3, By locator4) throws InterruptedException {
-        Actions act = new Actions(driver);
+        //Actions act = new Actions(driver);
         doClick(locator1);
         Thread.sleep(1500);
-        act.moveToElement(getWebElement(locator2)).perform();
+        moveToElement(locator2);
+       // act.moveToElement(getWebElement(locator2)).perform();
         Thread.sleep(1500);
-        act.moveToElement(getWebElement(locator3)).perform();
+        moveToElement(locator3);
+        //act.moveToElement(getWebElement(locator3)).perform();
         Thread.sleep(1500);
         doClick(locator4);
 
     }
 
-    public void doActionsSendKeys(By locator,String value) {
-        Actions act=new Actions(driver);
-        act.sendKeys(getWebElement(locator),value).perform();
+    public void doActionsSendKeys(By locator, String value) {
+        Actions act = new Actions(driver);
+        act.sendKeys(getWebElement(locator), value).perform();
     }
 
     public void doActionsClick(By locator) {
-        Actions act=new Actions(driver);
+        Actions act = new Actions(driver);
         act.click(getWebElement(locator)).perform();
+    }
+
+    public  void dragAndDrop(By src, By target) {
+
+        Actions act = new Actions(driver);
+        act.dragAndDrop(getWebElement(src), getWebElement(target)).perform();
     }
 
     public WebElement getWebElement(By locator) {

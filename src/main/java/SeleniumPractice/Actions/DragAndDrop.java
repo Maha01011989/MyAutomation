@@ -19,8 +19,10 @@ public class DragAndDrop {
 
         driver.switchTo().frame(getWebElement(By.className("demo-frame")));
 
-        Actions actions = new Actions(driver);
-        actions.dragAndDrop(getWebElement(drag), getWebElement(drop)).perform();
+//        Actions actions = new Actions(driver);
+//        actions.dragAndDrop(getWebElement(drag), getWebElement(drop)).perform();
+
+        dragAndDrop(drag, drop);
 
 
     }
@@ -31,5 +33,11 @@ public class DragAndDrop {
 
     public static void doClick(By locator) {
         getWebElement(locator).click();
+    }
+
+    public static void dragAndDrop(By src, By target) {
+
+        Actions act = new Actions(driver);
+        act.dragAndDrop(getWebElement(src), getWebElement(target)).perform();
     }
 }
