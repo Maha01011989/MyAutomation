@@ -1,4 +1,4 @@
-package SeleniumPractice.JavaPractice;
+package SeleniumPractice.JavaPractice.String;
 
 public class StringReversal {
     public static void main(String[] args) {
