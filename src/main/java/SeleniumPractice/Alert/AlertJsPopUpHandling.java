@@ -14,6 +14,9 @@ public class AlertJsPopUpHandling {
 
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 
+
+
+
         WebElement button1 = driver.findElement(By.xpath("//button[text()='Click for JS Alert']"));
         button1.click();
 
