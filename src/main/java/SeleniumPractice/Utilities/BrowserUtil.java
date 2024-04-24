@@ -9,11 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-/**
- *
- * @author naveenautomationlabs
- *
- */
+
 public class BrowserUtil {
 
 
